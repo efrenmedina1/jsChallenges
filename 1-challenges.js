@@ -7,29 +7,36 @@
 
 // Write a JavaScript function that checks whether a passed string is palindrome or not? 
 
-function reverseString(str) {
-  // Step 1. Create an empty string that will host the new created string
-  var newString = "hello";
-
-  // Step 2. Create the FOR loop
-  /* The starting point of the loop will be (str.length - 1) which corresponds to the 
-     last character of the string, "o"
-     As long as i is greater than or equals 0, the loop will go on
-     We decrement i after each iteration */
-  for (var i = str.length - 1; i >= 0; i--) { 
-      newString += str[i]; // or newString = newString + str[i];
+function check(word)
+{
+  word= word.toLowerCase();
+   var not = true;
+   var j;
+   j = (word.length) -1 ;
+   var cnt = j / 2;
+    for( i = 0; i < cnt+1 ; i++,j-- )
+    {
+        if( word[i] != word[j] )
+        {
+           not = false;
+           break; 
+        }
+    }
+  if( not ) {
+  console.log('True');
   }
-  /* Here hello's length equals 5
-      For each iteration: i = str.length - 1 and newString = newString + str[i]
-      First iteration:    i = 5 - 1 = 4,         newString = "" + "o" = "o"
-      Second iteration:   i = 4 - 1 = 3,         newString = "o" + "l" = "ol"
-      Third iteration:    i = 3 - 1 = 2,         newString = "ol" + "l" = "oll"
-      Fourth iteration:   i = 2 - 1 = 1,         newString = "oll" + "e" = "olle"
-      Fifth iteration:    i = 1 - 1 = 0,         newString = "olle" + "h" = "olleh"
-  End of the FOR Loop*/
+  else {
+console.log('False');
 
-  // Step 3. Return the reversed string
-  return newString; // "olleh"
+let str = word
+
+function reverse(str) 
+{
+    return str.split("").reverse().join("");
 }
 
-reverseString('hello');
+console.log(reverse(word));
+}
+}
+check('goiog');
+check('jump')
