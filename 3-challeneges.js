@@ -61,7 +61,7 @@ console.log(newObject)
 //     'PropertyC': 3
 // };
 
-// data.PropertyA = 4;
+// data.PropertyD = 4;
 
 // console.log(data)
 
